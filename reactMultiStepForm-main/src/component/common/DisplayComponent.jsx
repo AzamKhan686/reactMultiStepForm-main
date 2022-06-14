@@ -23,6 +23,7 @@ export const renderInputField = ({ name, label, type, state, onChange }) => {
       error={errors[name] ? true : false}
       helperText={errors[name] ? errors[name] : ""}
       onChange={onChange}
+      
     />
   );
 };

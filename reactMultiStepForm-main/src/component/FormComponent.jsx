@@ -12,6 +12,11 @@ import {
 import Step1 from "./Steps/step1";
 import Step2 from "./Steps/step2";
 import Step3 from "./Steps/step3";
+import Step4 from "./Steps/step4";
+import Step5 from "./Steps/step5";
+import Step6 from "./Steps/step6";
+
+
 import FinalStep from "./Steps/FinalStep";
 import { renderText } from "./common/DisplayComponent";
 import { styles } from "./common/styles";
@@ -24,27 +29,46 @@ class FormComponent extends Component {
       phone: "",
       email: "",
 
-      highestDegree: "",
-      issuedBy: "",
-      yearOfPassing: "",
-      jobType: "",
+      business: "",
+      phone2: "",
+      streetno:"",
+      streetname:"",
+      address2:"",
+      city:"",
+      province:"",
+      zip:"",
+      zip2:"",
 
-      skill: "",
-      jobApplyFor: "",
-      workExperence: "",
-      expectedSalary: "",
     },
     errors: {
       firstName: "",
       lastName: "",
       email: "",
       phone: "",
+      business: "",
+      phone2: "",
+      streetno:"",
+      streetname:"",
+      address2:"",
+      city:"",
+      province:"",
+      zip:"",
+      zip2:"",
     },
     validity :{
       firstName: false,
       lastName: false,
       email: false,
       phone: false,
+      business: false,
+      phone2: false,
+      streetno:false,
+      streetname:false,
+      address2:false, //optional
+      city:false,
+      province:false,
+      zip:false,
+      zip2:false, //optional
     },
     steps: [
       { label: "Personal Bio" },
@@ -111,8 +135,65 @@ class FormComponent extends Component {
        
       }
 
+      if (target.name == "business") {
+        if (  target.value.length < 2){
+          errors.business = `Business name is invalid`
+           validity.business = false
+        }
+        else{
+          errors[target.name] = ""
+          validity.business = true;
+        }
+      }
+      if (target.name == "phone2") {
+        var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+        if( !phoneNumberPattern.test(target.value)){
+          errors.phone2 = `Invalid phone number please use (xxx) xxx - xxxx format`
+          validity.phone2 = false
+        }
+        else{
+          errors[target.name] = ""
+          validity.phone2 = true
+        }
+       
+      }
+      if (target.name == "streetno") {
+        if (isNaN(target.value)){
+          errors.streetno = `Not a valid street no`
+           validity.streetno = false
+        }
+        else{
+          errors[target.name] = ""
+          validity.streetno = true;
+        }
+      }
+
+      if (target.name == "province") {
+        if (target.value == ""){
+          errors.province = `Not a valid street number`
+           validity.province = false
+        }
+        else{
+          errors[target.name] = ""
+          validity.province = true;
+        }
+      }
+
+      if (target.name == "zip") {
+        if (isNaN(target.value)){
+          errors.zip = `Not a valid postal code`
+           validity.zip = false
+        }
+        else{
+          errors[target.name] = ""
+          validity.zip = true;
+        }
+      }
+
       data[target.name] = target.value;
       this.setState({ data, errors });
+    
+    
     };
 
     const handleNextStep = () => {
@@ -121,22 +202,27 @@ class FormComponent extends Component {
    if (validity.email && validity.firstName && validity.lastName && validity.phone){
      stepCount = stepCount + 1;
    this.setState({ stepCount });
+   
    }
-   else{
-    
-    if(data.firstName == ''){
-      
-      errors.phone = `phone number is required`;
-      console.log(errors.phone)
+   else {
+    console.log(stepCount)
+  //     if(validity.business && validity.phone2 && validity.streetno){
+  //       stepCount = stepCount + 1;
+  //  this.setState({ stepCount });
+  //     }
+  //     else{
+  //       console.log("fuck")
+  //     }
     }
+   
    }
    
-    }
-    const handleBackStep = () => {
-      let { stepCount } = this.state;
-      stepCount = stepCount - 1;
-      this.setState({ stepCount });
-    };
+    
+    // const handleBackStep = () => {
+    //   let { stepCount } = this.state;
+    //   stepCount = stepCount - 1;
+    //   this.setState({ stepCount });
+    // };
 
     const getStepContent = (step) => {
       switch (step) {
@@ -154,7 +240,7 @@ class FormComponent extends Component {
               state={this.state}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
-              handlePrev={handleBackStep}
+              // handlePrev={handleBackStep}
             />
           );
         case 2:
@@ -163,11 +249,41 @@ class FormComponent extends Component {
               state={this.state}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
-              handlePrev={handleBackStep}
+              // handlePrev={handleBackStep}
               handleSubmit={handleSubmit}
             />
           );
-        case 3:
+          case 3:
+          return (
+            <Step4
+              state={this.state}
+              handleChange={handleOnChange}
+              handleNext={handleNextStep}
+              // handlePrev={handleBackStep}
+              handleSubmit={handleSubmit}
+            />
+          );
+          case 4:
+            return (
+              <Step5
+                state={this.state}
+                handleChange={handleOnChange}
+                handleNext={handleNextStep}
+                // handlePrev={handleBackStep}
+                handleSubmit={handleSubmit}
+              />
+            );
+            case 5:
+            return (
+              <Step6
+                state={this.state}
+                handleChange={handleOnChange}
+                handleNext={handleNextStep}
+                // handlePrev={handleBackStep}
+                handleSubmit={handleSubmit}
+              />
+            );
+        case 6:
           return <FinalStep data={this.state.data} />;
         default:
           return (

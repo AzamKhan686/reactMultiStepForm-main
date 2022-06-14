@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Grid, Paper, TextField } from "@material-ui/core";
 import { styles } from "../common/styles";
 import {
@@ -15,6 +15,7 @@ const Step3 = ({
   handlePrev,
   handleSubmit,
 }) => {
+
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
@@ -25,37 +26,77 @@ const Step3 = ({
           align: "center",
         })}
       </Box>
-      
 
-      <Grid container spacing={1}> 
-      <Grid item xs={3}> 
-      
-      </Grid>
-      <Grid item xs={6} spacing={1} style={{flexDirection:'row', backgroundColor:'red'}}> 
-       <Box>
-       <TextField variant='outlined'/>
-       <TextField variant='outlined'/>
-       <TextField variant='outlined'/>
-       <TextField variant='outlined'/>
-       </Box>
-      </Grid>
-      <Grid item xs={3}> 
-      
-      </Grid>
-      </Grid>
+      <Grid container mt={2}>
+        <Grid item xs={2}></Grid>
         
-
-      <Grid container component={Box} justify='center' mb={2} p={2}>
-      <Grid item xs={3}> 
-      
-      </Grid>
-      <Grid item xs={6}>
-        <Box ml={2}>{renderButton({ label: "Submit", onClick: handleNext })}</Box>
-        
+        <Grid item  xs={8}  justify="center" style={{ display: "flex", flexDirection: "row" }} >
+         
+          <Grid item xs={2} style={{ marginLeft: "10px" }}>
+            <TextField
+              variant="outlined"
+              name="otp1"
+              type="text"
+              onInput={(e) => {
+                e.target.value = Math.max(0, parseInt(e.target.value))
+                  .toString()
+                  .slice(0, 1);
+              }}
+            />
+           
+          </Grid>
+       
+          <Grid item xs={2} style={{ marginLeft: "10px" }}>
+            <TextField
+              variant="outlined"
+              name="otp2"
+              type="text"
+              onInput={(e) => {
+                e.target.value = Math.max(0, parseInt(e.target.value))
+                  .toString()
+                  .slice(0, 1);
+              }}
+            />
+          </Grid>
+          <Grid item xs={2} style={{ marginLeft: "10px" }}>
+            <TextField
+              variant="outlined"
+              name="otp3"
+              type="text"
+              onInput={(e) => {
+                e.target.value = Math.max(0, parseInt(e.target.value))
+                  .toString()
+                  .slice(0, 1);
+              }}
+            />
+          </Grid>
+          <Grid item xs={2} style={{ marginLeft: "10px" }}>
+            <TextField
+              variant="outlined"
+              name="otp4"
+              type="text"
+              onInput={(e) => {
+                e.target.value = Math.max(0, parseInt(e.target.value))
+                  .toString()
+                  .slice(0, 1);
+              }}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={3}> 
-    
+        <Grid item xs={2}></Grid>
       </Grid>
+
+      <Grid container component={Box} justify="center" p={2}>
+        <Grid item xs={3}></Grid>
+        <Grid item xs={6}>
+          <Box ml={2} mt={2}>
+            {renderButton({ label: "Submit", onClick: handleNext })}
+          </Box>
+        </Grid>
+        <Grid item xs={3}></Grid>
+      </Grid>
+      <Grid container component={Box} justify="center" mb={2} p={2}>
+        <a href="#">Call Me Again</a>
       </Grid>
     </Paper>
   );
