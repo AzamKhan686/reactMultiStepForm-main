@@ -24,7 +24,7 @@ const Finish = () => {
       </Grid>
 
       <Grid item xs={12} container justify="center" style={{ marginBottom: "10px"}}>
-       <EmailIcon/>
+       <EmailIcon style={{ fontSize: 100, color:"#fc2003" }}/>
         
       </Grid>
 

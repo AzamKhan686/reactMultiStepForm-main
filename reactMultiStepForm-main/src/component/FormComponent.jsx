@@ -267,6 +267,9 @@ class FormComponent extends Component {
         this.setState({ stepCount });
         console.log(stepCount);
       }
+      else{
+        alert("Fields are missing")
+      }
     }
     else if(stepCount == 1) {
         stepCount = stepCount + 1;
