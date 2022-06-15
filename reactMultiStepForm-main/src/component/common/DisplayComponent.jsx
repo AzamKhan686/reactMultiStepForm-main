@@ -1,8 +1,8 @@
 import { Button, MenuItem, TextField, Typography } from "@material-ui/core";
 
 
-export const renderText = ({ type, label, color, ...rest }) => (
-  <Typography variant={type} color={color} {...rest}>
+export const renderText = ({fontFamily, type, label, color, ...rest }) => (
+  <Typography variant={type} color={color} fontFamily={fontFamily} {...rest}>
     {label}
   </Typography>
 );

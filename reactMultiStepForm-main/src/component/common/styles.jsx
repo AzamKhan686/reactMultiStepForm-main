@@ -21,6 +21,6 @@ export const styles = {
   },
 
   steps: {
-    padding: "16px",
+    padding: "20px",
   },
 };

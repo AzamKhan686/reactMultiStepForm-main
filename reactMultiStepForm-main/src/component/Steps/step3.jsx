@@ -15,6 +15,18 @@ const Step3 = ({
   handlePrev,
   handleSubmit,
 }) => {
+  const [otp, setOtp] = useState();
+  const handleOTPChange = (target) => {
+    if (isNaN(target.value)) 
+    return false;
+
+    // setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
+
+    //Focus next input
+    if (target.nextSibling) {
+        target.nextSibling.focus();
+    }
+};
 
   return (
     <Paper style={styles.steps}>
@@ -24,6 +36,7 @@ const Step3 = ({
           type: "h6",
           color: "textPrimary",
           align: "center",
+          fontFamily: "work sans",
         })}
       </Box>
 
@@ -34,9 +47,12 @@ const Step3 = ({
          
           <Grid item xs={2} style={{ marginLeft: "10px" }}>
             <TextField
+            style={{ textAlign:'center' }}
               variant="outlined"
-              name="otp1"
+              name="otp"
               type="text"
+              
+               onFocus={e => e.target.select()}
               onInput={(e) => {
                 e.target.value = Math.max(0, parseInt(e.target.value))
                   .toString()
@@ -49,8 +65,10 @@ const Step3 = ({
           <Grid item xs={2} style={{ marginLeft: "10px" }}>
             <TextField
               variant="outlined"
-              name="otp2"
+              name="otp"
+              
               type="text"
+              onFocus={e => e.target.select()}
               onInput={(e) => {
                 e.target.value = Math.max(0, parseInt(e.target.value))
                   .toString()
@@ -61,8 +79,10 @@ const Step3 = ({
           <Grid item xs={2} style={{ marginLeft: "10px" }}>
             <TextField
               variant="outlined"
-              name="otp3"
+              name="otp"
+              
               type="text"
+              onFocus={e => e.target.select()}
               onInput={(e) => {
                 e.target.value = Math.max(0, parseInt(e.target.value))
                   .toString()
@@ -73,8 +93,10 @@ const Step3 = ({
           <Grid item xs={2} style={{ marginLeft: "10px" }}>
             <TextField
               variant="outlined"
-              name="otp4"
+              name="otp"
+              
               type="text"
+              onFocus={e => e.target.select()}
               onInput={(e) => {
                 e.target.value = Math.max(0, parseInt(e.target.value))
                   .toString()

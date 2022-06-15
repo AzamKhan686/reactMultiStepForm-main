@@ -23,7 +23,7 @@ const Step1 = ({ state, handleChange, handleNext }) => {
           type: "h7",
           color: "textPrimary",
           align: "left",
-          
+          fontFamily: "work sans",
         })}
       </Box>
 
@@ -33,7 +33,7 @@ const Step1 = ({ state, handleChange, handleNext }) => {
             state,
             name: "phone",
             label: "Phone Number",
-            type: "number",
+            type: "text",
             onChange: handleChange,
           })}
         </Grid>
@@ -72,9 +72,9 @@ const Step1 = ({ state, handleChange, handleNext }) => {
           <FormControlLabel
             
             
-            control={<Checkbox color="default" style={{ marginBottom: "20px" }} />}
+            control={<Checkbox onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "20px" }} />}
             label={
-              <p style={{ color: "#2A221C", font:"17px work sans" }}>
+              <p style={{font:"17px work sans" }}>
                 I represent the organization (owner of this phone number) and am
                 authorized to complete this process.The voice line will not be
               </p>

@@ -14,6 +14,7 @@ const Step4 = ({
   handleNext,
   handlePrev,
   handleSubmit,
+  data,
 }) => {
 
   return (
@@ -24,6 +25,7 @@ const Step4 = ({
           type: "h6",
           color: "textPrimary",
           align: "center",
+          fontFamily: "work sans",
         })}
       </Box>
 
@@ -32,7 +34,7 @@ const Step4 = ({
         
         <Grid item  xs={8}  justify="center" style={{ display: "flex", flexDirection: "row" }} >
         
-         <h1 style={{color: "green"}}>Success</h1>
+         <h1 style={{color: "green"}}>✔️ {data.phone}</h1>
         </Grid>
         <Grid item xs={2}></Grid>
       </Grid>

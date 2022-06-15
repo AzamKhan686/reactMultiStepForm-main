@@ -15,7 +15,7 @@ import {
   renderSelect
 } from "../common/DisplayComponent";
 
-const Step5 = ({ state, handleChange, handleNext }) => {
+const Step5 = ({ state, handleChange, handleNext , data}) => {
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
@@ -24,12 +24,12 @@ const Step5 = ({ state, handleChange, handleNext }) => {
           type: "h6",
           color: "textPrimary",
           align: "left",
-          
+          fontFamily: "work sans",
         })}
       </Box>
 
       <Grid item xs={12} container style={{ marginBottom: "10px"}}>
-        <p style={{ color: "#2A221C", font:"17px work sans" }}>Please complete additional information about your organization:</p>
+        <p style={{font:"17px work sans" }}>Please complete additional information about your organization:</p>
         
       </Grid>
 
@@ -45,7 +45,7 @@ const Step5 = ({ state, handleChange, handleNext }) => {
         </Grid>
         <Grid item xs={12} sm={6}>
         {renderText({
-          label: "(xxx) xxx xxx",
+          label: data.phone,
           type: "h7",
           color: "textPrimary",
           align: "left",
@@ -66,7 +66,7 @@ const Step5 = ({ state, handleChange, handleNext }) => {
         </Grid>
         <Grid item xs={12} sm={6}>
         {renderText({
-          label: "BOB",
+          label: `${data.firstName} ${data.lastName}`,
           type: "h7",
           color: "textPrimary",
           align: "left",
@@ -87,7 +87,7 @@ const Step5 = ({ state, handleChange, handleNext }) => {
         </Grid>
         <Grid item xs={12} sm={6}>
         {renderText({
-          label: "BOB@gmail.com",
+          label: data.email,
           type: "h7",
           color: "textPrimary",
           align: "left",
@@ -111,7 +111,7 @@ const Step5 = ({ state, handleChange, handleNext }) => {
             state,
             name: "phone2",
             label: "Best phone number to reach you",
-            type: "number",
+            type: "text",
             onChange: handleChange,
           })}
         </Grid>
@@ -173,9 +173,56 @@ const Step5 = ({ state, handleChange, handleNext }) => {
             name: "province",
             label: "State/Province",
             options: [
-              { key: "Florida", value: "s1" },
-              { key: "Taxes", value: "s2" },
-            ],
+                { key: "Alabama", value: "Alabama" },
+                { key: "Arizona", value: "Arizona" },
+                { key: "Arkansas", value: "Arkansas" },
+                { key: "California", value: "California" },
+                { key: "Colorado", value: "Colorado" },
+                { key: "Connecticut", value: "Connecticut" },
+                { key: "Delaware", value: "Delaware" },
+                { key: "Florida", value: "Florida" },
+                { key: "Georgia", value: "Georgia" },
+                { key: "Hawaii", value: "Hawaii" },
+                { key: "Idaho", value: "Idaho" },
+                { key: "Illinois", value: "Illinois" },
+                { key: "Indiana", value: "Indiana" },
+                { key: "Iowa", value: "Iowa" },
+                { key: "Kansas", value: "Kansas" },
+                { key: "Kentucky", value: "Kentucky" },
+                { key: "Louisiana", value: "Louisiana" },
+                { key: "Maine", value: "Maine" },
+                { key: "Maryland", value: "Maryland" },
+                { key: "Massachusetts", value: "Massachusetts" },
+                { key: "Michigan", value: "Michigan" },
+                { key: "Minnesota", value: "Minnesota" },
+                { key: "Mississippi", value: "Mississippi" },
+                { key: "Missouri", value: "Missouri" },
+                { key: "Montana", value: "Montana" },
+                { key: "Nebraska", value: "Nebraska" },
+                { key: "Nevada", value: "Nevada" },
+                { key: "New Hampshire", value: "New Hampshire" },
+                { key: "New Jersey", value: "New Jersey" },
+                { key: "New Mexico", value: "New Mexico" },
+                { key: "New York", value: "New York" },
+                { key: "North Carolina", value: "North Carolina" },
+                { key: "North Dakota", value: "North Dakota" },
+                { key: "Ohio", value: "Ohio" },
+                { key: "Oklahoma", value: "Oklahoma" },
+                { key: "Oregon", value: "Oregon" },
+                { key: "Pennsylvania", value: "Pennsylvania" },
+                { key: "Rhode Island", value: "Rhode Island" },
+                { key: "South Carolina", value: "South Carolina" },
+                { key: "South Dakota", value: "South Dakota" },
+                { key: "Tennessee", value: "Tennessee" },
+                { key: "Taxes", value: "Taxes" },
+                { key: "Utah", value: "Utah" },
+                { key: "Vermont", value: "Vermont" },
+                { key: "Virginia", value: "Virginia" },
+                { key: "Washington", value: "Washington" },
+                { key: "West Virginia", value: "West Virginia" },
+                { key: "Wisconsin", value: "Wisconsin" },
+                { key: "Wyoming", value: "Wyoming" }
+              ],
             onChange: handleChange,
           })}
         </Grid>

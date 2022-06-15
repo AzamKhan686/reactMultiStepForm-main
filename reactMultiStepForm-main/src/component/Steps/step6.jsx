@@ -8,7 +8,7 @@ import {
   renderText,
 } from "../common/DisplayComponent";
 
-const Step6 = ({ state, handleChange, handleNext, handlePrev }) => {
+const Step6 = ({ state, handleChange, handleNext }) => {
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
@@ -17,20 +17,11 @@ const Step6 = ({ state, handleChange, handleNext, handlePrev }) => {
           type: "h6",
           color: "textPrimary",
           align: "center",
+          fontFamily: "work sans",
         })}
       </Box>
 
-      {/* <Grid container component={Box} justify='center' p={2}> 
-      <Grid item xs={3}> 
-      
-      </Grid>
-      <Grid item xs={6}> 
-      <p style={{ font:"17px work sans" }}>This is a suggested name which will be your "Account  Name" used by you and your team members to access your account. {<br></br>}To change it, just edit and submit</p>
-      </Grid>
-      <Grid item xs={3}> 
-      
-      </Grid>
-      </Grid> */}
+     
 
 <Grid container component={Box} justify='center' p={2}>
       <Grid item xs={3}> 

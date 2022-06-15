@@ -17,6 +17,7 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev }) => {
           type: "h6",
           color: "textPrimary",
           align: "center",
+          fontFamily: "work sans",
         })}
       </Box>
       <Grid container spacing={1}> 
