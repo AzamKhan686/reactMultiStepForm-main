@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Grid, Paper, TextField } from "@material-ui/core";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { styles } from "../common/styles";
 import {
   renderButton,
@@ -30,11 +31,12 @@ const Step4 = ({
       </Box>
 
       <Grid container mt={2}>
+        {/* <Grid item xs={2}></Grid> */}
         <Grid item xs={2}></Grid>
         
-        <Grid item  xs={8}  justify="center" style={{ display: "flex", flexDirection: "row" }} >
+        <Grid item  xs={8}  justify="center" style={{ display: "flex", flexDirection: "row"}} >
         
-         <h1 style={{color: "green"}}>✔️ {data.phone}</h1>
+        {<CheckCircleIcon style={{ fontSize: 25, color:"#20e631", marginRight:"10px", marginTop:"25px" }}/>}<h2 style={{color: "#20e631"}}>{data.phone}</h2>
         </Grid>
         <Grid item xs={2}></Grid>
       </Grid>

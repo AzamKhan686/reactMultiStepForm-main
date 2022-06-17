@@ -17,9 +17,7 @@ import Step5 from "./Steps/step5";
 import Step6 from "./Steps/step6";
 import Finish from "./Steps/Finish";
 
-
 import FinalStep from "./Steps/FinalStep";
-import { renderText } from "./common/DisplayComponent";
 import { styles } from "./common/styles";
 
 class FormComponent extends Component {
@@ -35,11 +33,11 @@ class FormComponent extends Component {
       phone2: "",
       streetno: "",
       streetname: "",
-      address2: "",
       city: "",
       province: "",
       zip: "",
       zip2: "",
+      address2: "",
       accountName: "",
     },
     errors: {
@@ -51,11 +49,11 @@ class FormComponent extends Component {
       phone2: "",
       streetno: "",
       streetname: "",
-      address2: "",
       city: "",
       province: "",
       zip: "",
       zip2: "",
+      address2: "",
       accountName: "",
     },
     validity: {
@@ -185,23 +183,21 @@ class FormComponent extends Component {
         }
       }
 
-      if(target.name == "streetname"){
-          if(target.value == ""){
-            errors.streetname = `Street name is required`;
-            validity.streetname = false;
-          }
-          else {
-            errors[target.name] = "";
-            validity.streetname = true;
-          }
+      if (target.name == "streetname") {
+        if (target.value == "") {
+          errors.streetname = `Street name is required`;
+          validity.streetname = false;
+        } else {
+          errors[target.name] = "";
+          validity.streetname = true;
+        }
       }
 
-      if(target.name == "city"){
-        if(target.value == ""){
+      if (target.name == "city") {
+        if (target.value == "") {
           errors.city = `City is required`;
           validity.city = false;
-        }
-        else {
+        } else {
           errors[target.name] = "";
           validity.city = true;
         }
@@ -229,17 +225,13 @@ class FormComponent extends Component {
       }
 
       if (target.name == "accountName") {
-        if (target.value == "") {
+        if (target.value==="") {
           errors.accountName = "Account name can not be empty";
           validity.accountName = false;
-        } else if (/[A-Z]/.test(target.value) == true) {
-          errors.accountName = "Account name should have no uppercase letters";
-          validity.accountName = false;
-        } else if (/[0-9]/.test(target.value) == true) {
-          errors.accountName = "Account name should numbers only between 0-9";
-          validity.accountName = false;
-        } else if (target.value.indexOf(" ") >= 0) {
-          errors.accountName = "Account name should have no white spaces";
+        } 
+        
+         else if (/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(target.value) == true) {
+          errors.accountName = "Account name should have no special characters";
           validity.accountName = false;
         } else {
           errors.accountName = "";
@@ -253,89 +245,97 @@ class FormComponent extends Component {
 
     const handleNextStep = () => {
       let { stepCount, data, errors, validity } = this.state;
-      
-      if(stepCount == 0){
-        
-      if (
-        validity.email &&
-        validity.firstName &&
-        validity.lastName &&
-        validity.phone &&
-        validity.chkb
-      ) {
+
+      if (stepCount === 0) {
+        if (
+          validity.email &&
+          validity.firstName &&
+          validity.lastName &&
+          validity.phone &&
+          validity.chkb
+        ) {
+          stepCount = stepCount + 1;
+          this.setState({ stepCount });
+          console.log(stepCount);
+        } else {
+          const keys = Object.keys(data);
+          keys.forEach((key, index) => {
+            if(index<=3){
+            if (data[key] === "") {
+              errors[key] = `This field is required`;
+              this.setState(errors);
+            }
+          }
+             console.log(`${key}: ${index}`);
+          });
+         
+        }
+      } else if (stepCount === 1) {
         stepCount = stepCount + 1;
         this.setState({ stepCount });
         console.log(stepCount);
-      }
-      else{
-        alert("Fields are missing")
-      }
-    }
-    else if(stepCount == 1) {
+      } else if (stepCount === 2) {
         stepCount = stepCount + 1;
         this.setState({ stepCount });
         console.log(stepCount);
-    }
-    else if(stepCount == 2) {
-      stepCount = stepCount + 1;
-      this.setState({ stepCount });
-      console.log(stepCount);
-      
-  }
-  else if(stepCount == 3) {
-    stepCount = stepCount + 1;
-    this.setState({ stepCount });
-    console.log(stepCount);
-    
-}
-else if(stepCount == 4) {
-  if (validity.business && validity.phone2 && validity.streetno && validity.streetname && validity.city && validity.province && validity.zip){
-       stepCount = stepCount + 1;
-       this.setState({ stepCount });
-       console.log(stepCount);
-  }
-  else{
-  //   for(var i=0; i<data.length; i++){
-  //   if(this.data[i] == ""){
-  //   errors[i] = `This field is required`
-  //   alert("errors")
-  //   }
-  // }
-  alert("Fields are missing")
-  }
-}
-else if(stepCount == 5) {
-  if(validity.accountName){
-  stepCount = stepCount + 1;
-  this.setState({ stepCount });
-  console.log(stepCount);
-  }
-  else{
-    alert("Enter your account name")
-  }
-}
-
-else if(stepCount == 6){
-  stepCount = stepCount + 1;
-  this.setState({ stepCount });
-  console.log(stepCount);
-}
-
-else if(stepCount == 7){
-  stepCount = stepCount + 1;
-  this.setState({ stepCount });
-  console.log(stepCount);
-}
-     
-      
-      
-      else {
-        console.log("no")
+      } else if (stepCount === 3) {
+        stepCount = stepCount + 1;
+        this.setState({ stepCount });
+        console.log(stepCount);
+      } else if (stepCount === 4) {
+        if (
+          validity.business &&
+          validity.phone2 &&
+          validity.streetno &&
+          validity.streetname &&
+          validity.city &&
+          validity.province &&
+          validity.zip
+        ) {
+          stepCount = stepCount + 1;
+          this.setState({ stepCount });
+          console.log(stepCount);
+        } else {
+           const keys = Object.keys(data);
+          keys.forEach((key, index) => {
+            if(index>=6 && index<=12){
+            if (data[key] == "") {
+              errors[key] = `This field is required`;
+              this.setState(errors);
+            }
+          }
+            // console.log(`${key}: ${index}`);
+          });
+        }
+      } else if (stepCount === 5) {
+        if (validity.accountName) {
+          stepCount = stepCount + 1;
+          this.setState({ stepCount });
+          console.log(stepCount);
+        } else {
+          const keys = Object.keys(data);
+          keys.forEach((key, index) => {
+            if(index===15){
+            if (data[key] == "") {
+              errors[key] = `Account name is required`;
+              this.setState(errors);
+            }
+          }
+            // console.log(`${key}: ${index}`);
+          });
+        }
+      } else if (stepCount === 6) {
+        stepCount = stepCount + 1;
+        this.setState({ stepCount });
+        console.log(stepCount);
+      } else if (stepCount === 7) {
+        stepCount = stepCount + 1;
+        this.setState({ stepCount });
+        console.log(stepCount);
+      } else {
+        console.log("no");
       }
-
     };
-
-  
 
     const getStepContent = (step) => {
       switch (step) {
@@ -350,62 +350,62 @@ else if(stepCount == 7){
         case 1:
           return (
             <Step2
+              data={this.state.data}
               state={this.state}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
-              
             />
           );
         case 2:
           return (
             <Step3
-            
               state={this.state}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
-             
               handleSubmit={handleSubmit}
             />
           );
         case 3:
           return (
             <Step4
-            data={this.state.data}
+              data={this.state.data}
               state={this.state}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
-            
               handleSubmit={handleSubmit}
             />
           );
         case 4:
           return (
             <Step5
-            data={this.state.data}
+              data={this.state.data}
               state={this.state}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
-              
               handleSubmit={handleSubmit}
             />
           );
         case 5:
           return (
             <Step6
-            
               state={this.state}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
-             
               handleSubmit={handleSubmit}
             />
           );
-          case 6:
-            return <FinalStep data={this.state.data} handleNext={handleNextStep} handleSubmit={handleSubmit}/>;
+        case 6:
+          return (
+            <FinalStep
+              data={this.state.data}
+              handleNext={handleNextStep}
+              handleSubmit={handleSubmit}
+            />
+          );
 
-            case 7:
-              return <Finish/>;
-        
+        case 7:
+          return <Finish />;
+
         default:
           return (
             <Step1

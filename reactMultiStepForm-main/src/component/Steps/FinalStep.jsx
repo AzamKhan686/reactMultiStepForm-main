@@ -7,13 +7,8 @@ const FinalStep = ({ data, handleNext }) => {
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
-        {renderText({
-          label: "Review Your Information & Create Account",
-          type: "h6",
-          color: "textPrimary",
-          align: "left",
-          fontFamily: "work sans",
-        })}
+        
+         <h2 style={{textAlign:"center", font:"work sans", fontWeight:"400"}}>Review Your Information & Create Account</h2>
       </Box>
 
       <Grid item xs={12} container style={{ marginBottom: "10px"}}>
@@ -22,170 +17,197 @@ const FinalStep = ({ data, handleNext }) => {
       </Grid>
 
       <Grid item xs={12} >
+        <h7 style={{font:"work sans"}}>
         {renderText({
           label: "BUSINESS PHONE NUMBER:",
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
-        })}
+        })}</h7>
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
+        <h7 style={{font:"work sans"}}>
         {renderText({
           label: data.phone,
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
         })}
+        </h7>
         </Grid>
         
       </Grid>
 
       <Grid item xs={12} >
+      <h7 style={{font:"work sans"}}>
         {renderText({
           label: "NAME OF BUSINESS:",
           type: "h7",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
+        <h7 style={{font:"work sans"}}>
         {renderText({
           label: data.business,
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
         
       </Grid>
 
       <Grid item xs={12} >
+      <h7 style={{font:"work sans"}}>
         {renderText({
           label: "AUTHORIZED SIGNER:",
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
+        <h7 style={{font:"work sans"}}>
         {renderText({
           label: `${data.firstName} ${data.lastName}`,
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
         
       </Grid>
 
       <Grid item xs={12} >
+      <h7 style={{font:"work sans"}}>
         {renderText({
           label: "EMAIL ADDRESS:",
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
+        <h7 style={{font:"work sans"}}>
         {renderText({
           label: data.email,
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+         
         })}
+        </h7>
         </Grid>
         
       </Grid>
       <Grid item xs={12} >
+      <h7 style={{font:"work sans"}}>
         {renderText({
           label: "YOUR PHONE NUMBER:",
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
+        <h7 style={{font:"work sans"}}>
         {renderText({
           label: data.phone2,
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
         
       </Grid>
 
       <Grid item xs={12} >
+      <h7 style={{font:"work sans"}}>
         {renderText({
           label: "ACCOUNT NAME:",
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
+        <h7 style={{font:"work sans"}}>
         {renderText({
-          label: data.accountName,
-          type: "h7",
+          label: data.accountName.toLowerCase().replace(/\s+/g, ''),
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+         
         })}
+        </h7>
         </Grid>
         
       </Grid>
 
       <Grid item xs={12} >
+      <h7 style={{font:"work sans"}}>
         {renderText({
           label: "SERVICE ADDRESS:",
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
+        <h7 style={{font:"work sans"}}>
         {renderText({
-          label: `${data.streetno} ${data.streetname}`,
-          type: "h7",
+          label: `${data.streetno} ${data.streetname}. ${data.address2}`,
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
         <Grid item xs={12}>
+        <h7 style={{font:"work sans"}}>
         {renderText({
           label: `${data.city} ${data.province}, ${data.zip}-${data.zip2}`,
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
+          
         })}
+        </h7>
         </Grid>
         
       </Grid>

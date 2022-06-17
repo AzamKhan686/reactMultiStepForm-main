@@ -18,13 +18,15 @@ const Step1 = ({ state, handleChange, handleNext }) => {
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
+        <h4 style={{font:"work sans", fontWeight:"500"}}>
         {renderText({
           label: "COMCAST BUSINESS PHONE NUMBER",
-          type: "h7",
+          type: "",
           color: "textPrimary",
           align: "left",
           fontFamily: "work sans",
         })}
+        </h4>
       </Box>
 
       <Grid container spacing={2} style={{ marginBottom: "25px" }}>
@@ -74,7 +76,7 @@ const Step1 = ({ state, handleChange, handleNext }) => {
             
             control={<Checkbox onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "20px" }} />}
             label={
-              <p style={{font:"17px work sans" }}>
+              <p style={{font:"work sans" }}>
                 I represent the organization (owner of this phone number) and am
                 authorized to complete this process.The voice line will not be
               </p>

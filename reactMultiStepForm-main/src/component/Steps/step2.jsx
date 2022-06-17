@@ -8,7 +8,7 @@ import {
   renderText,
 } from "../common/DisplayComponent";
 
-const Step2 = ({ state, handleChange, handleNext, handlePrev }) => {
+const Step2 = ({ state, handleChange, handleNext, handlePrev,data }) => {
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
@@ -26,7 +26,7 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev }) => {
       </Grid>
       <Grid item xs={6}> 
        <Box >
-       <p style={{ font:"17px work sans" }}>You will immediately receive an automated phone call to +1-832-777-5555 with a PIN number to verify ownership.{<br></br>}{<br></br>} Have a pen and paper handy!</p>
+       <p style={{ font:"work sans" }}>You will immediately receive an automated phone call to <span style={{color:"#FF6E51"}}><b>{data.phone}</b></span> with a PIN number to verify ownership.{<br></br>}{<br></br>} Have a pen and paper handy!</p>
       </Box>
       </Grid>
       <Grid item xs={3}> 
