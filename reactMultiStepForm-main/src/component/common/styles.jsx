@@ -23,4 +23,16 @@ export const styles = {
   steps: {
     padding: "20px",
   },
+
+  otpfield:{
+    width: "10%",
+    height:"50%",
+    fontSize: 20,
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: "15px",
+    marginTop: "25px",
+    textIndent: "8px",
+    marginLeft: "12px",
+  },
 };

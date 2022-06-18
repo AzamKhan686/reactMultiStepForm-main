@@ -8,23 +8,17 @@ import {
   renderText,
 } from "../common/DisplayComponent";
 
-const Step3 = ({
-  state,
-  handleChange,
-  handleNext,
-  handlePrev,
-  handleSubmit,
-}) => {
-  const [otp, setOtp] = useState();
-  const handleOTPChange = (target) => {
-    if (isNaN(target.value)) 
-    return false;
+const Step3 = ({handleNext, handleSubmit,}) => {
+  const [otp, setOtp] = useState(new Array(4).fill(""));
 
-    // setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
+  const handleChange = (element, index) => {
+    if (isNaN(element.value)) return false;
+
+    setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
 
     //Focus next input
-    if (target.nextSibling) {
-        target.nextSibling.focus();
+    if (element.nextSibling) {
+        element.nextSibling.focus();
     }
 };
 
@@ -36,74 +30,32 @@ const Step3 = ({
           type: "h6",
           color: "textPrimary",
           align: "center",
-          fontFamily: "work sans",
         })}
       </Box>
+
+      
 
       <Grid container mt={2}>
         <Grid item xs={2}></Grid>
         
-        <Grid item  xs={8}  justify="center" style={{ display: "flex", flexDirection: "row" }} >
+        <Grid item  xs={8} justify="center" style={{ display: "flex", flexDirection: "row"}} >
          
-          <Grid item xs={2} style={{ marginLeft: "10px" }}>
-            <TextField
-            style={{ textAlign:'center' }}
-              variant="outlined"
-              name="otp"
-              type="text"
-              
-               onFocus={e => e.target.select()}
-              onInput={(e) => {
-                e.target.value = Math.max(0, parseInt(e.target.value))
-                  .toString()
-                  .slice(0, 1);
-              }}
-            />
-           
-          </Grid>
-       
-          <Grid item xs={2} style={{ marginLeft: "10px" }}>
-            <TextField
-              variant="outlined"
-              name="otp"
-              
-              type="text"
-              onFocus={e => e.target.select()}
-              onInput={(e) => {
-                e.target.value = Math.max(0, parseInt(e.target.value))
-                  .toString()
-                  .slice(0, 1);
-              }}
-            />
-          </Grid>
-          <Grid item xs={2} style={{ marginLeft: "10px" }}>
-            <TextField
-              variant="outlined"
-              name="otp"
-              
-              type="text"
-              onFocus={e => e.target.select()}
-              onInput={(e) => {
-                e.target.value = Math.max(0, parseInt(e.target.value))
-                  .toString()
-                  .slice(0, 1);
-              }}
-            />
-          </Grid>
-          <Grid item xs={2} style={{ marginLeft: "10px" }}>
-            <TextField
-              variant="outlined"
-              name="otp"
-              
-              type="text"
-              onFocus={e => e.target.select()}
-              onInput={(e) => {
-                e.target.value = Math.max(0, parseInt(e.target.value))
-                  .toString()
-                  .slice(0, 1);
-              }}
-            />
-          </Grid>
+        {otp.map((data, index) => {
+                        return (
+                            <input
+                                style={styles.otpfield}
+                                type="text"
+                                name="otp"
+                                maxLength="1"
+                                key={index}
+                                value={data}
+                                onChange={e => handleChange(e.target, index)}
+                                onFocus={e => e.target.select()}
+                            />
+                        );
+                    })}
+
+          
         </Grid>
         <Grid item xs={2}></Grid>
       </Grid>

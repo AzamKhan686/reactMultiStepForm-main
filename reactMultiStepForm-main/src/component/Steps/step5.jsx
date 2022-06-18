@@ -2,10 +2,7 @@ import React from "react";
 import {
   Box,
   Grid,
-  Paper,
-  Checkbox,
-  FormControlLabel,
-  FormGroup,
+  Paper
 } from "@material-ui/core";
 import { styles } from "../common/styles";
 import {
@@ -24,12 +21,11 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
           type: "h6",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
         })}
       </Box>
 
       <Grid item xs={12} container style={{ marginBottom: "10px"}}>
-        <p style={{font:"17px work sans" }}>Please complete additional information about your organization:</p>
+        <p style={{font:"work sans" }}>Please complete additional information about your organization:</p>
         
       </Grid>
 
@@ -40,7 +36,6 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
           type: "h7",
           color: "textPrimary",
           align: "left",
-          
         })}
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -110,7 +105,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
           {renderInputField({
             state,
             name: "phone2",
-            label: "Best phone number to reach you",
+            label: "Your phone number",
             type: "text",
             onChange: handleChange,
           })}
@@ -129,16 +124,16 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
       
 
       <Grid container spacing={2} style={{ marginBottom: "15px"}}>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           {renderInputField({
             state,
             name: "streetno",
-            label: "Street Number",
+            label: "Street No",
             type: "text",
             onChange: handleChange,
           })}
         </Grid>
-        <Grid item xs={9}>
+        <Grid item xs={8}>
           {renderInputField({
             state,
             name: "streetname",
@@ -150,6 +145,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
 
       <Grid item xs={12} style={{ marginTop: "15px"}}>
           {renderInputField({
+            required:true,
             state,
             name: "address2",
             label: "Address Line 2 (optional)",
@@ -171,7 +167,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
         {renderSelect({
             state,
             name: "province",
-            label: "State/Province",
+            label: "State",
             options: [
                 { key: "Alabama", value: "Alabama" },
                 { key: "Arizona", value: "Arizona" },
@@ -229,23 +225,25 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
       </Grid>
 
       <Grid container spacing={2} style={{ marginTop: "15px"}}>
-        <Grid item xs={4}>
+        <Grid item xs={3}>
           {renderInputField({
             state,
             name: "zip",
-            label: "ZIP / Postal Code",
+            label: "ZIP",
             type: "text",
             onChange: handleChange,
           })}
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={5}>
           {renderInputField({
+            required:true,
             state,
             name: "zip2",
-            label: "ZIP Plus 4 (optional)",
+            label: "Plus 4 (opt)",
             onChange: handleChange,
           })}
         </Grid>
+        {/* <Grid item xs={4}></Grid> */}
       </Grid>
 
       <Grid container justify="center" p={2} style={{ marginTop:"50px", marginBottom:"25px"}}>

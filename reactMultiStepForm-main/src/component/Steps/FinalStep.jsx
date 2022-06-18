@@ -7,41 +7,47 @@ const FinalStep = ({ data, handleNext }) => {
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
+      {renderText({
+          label: "Review Your Information & Create Account",
+          type: "h6",
+          color: "textPrimary",
+          align: "center",
+        })}
         
-         <h2 style={{textAlign:"center", font:"work sans", fontWeight:"400"}}>Review Your Information & Create Account</h2>
+         {/* <h2 style={{textAlign:"center", font:"work sans", fontWeight:"400"}}>Review Your Information & Create Account</h2> */}
       </Box>
 
       <Grid item xs={12} container style={{ marginBottom: "10px"}}>
-        <p style={{font:"17px work sans" }}>Please review your information before creating your Alive5 account.</p>
+        <p style={{font:"work sans" }}>Please review your information before creating your Alive5 account.</p>
         
       </Grid>
 
       <Grid item xs={12} >
-        <h7 style={{font:"work sans"}}>
+        
         {renderText({
           label: "BUSINESS PHONE NUMBER:",
           type: "",
           color: "textPrimary",
           align: "left",
-        })}</h7>
+        })}
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
-        <h7 style={{font:"work sans"}}>
+        
         {renderText({
           label: data.phone,
           type: "",
           color: "textPrimary",
           align: "left",
         })}
-        </h7>
+       
         </Grid>
         
       </Grid>
 
       <Grid item xs={12} >
-      <h7 style={{font:"work sans"}}>
+      
         {renderText({
           label: "NAME OF BUSINESS:",
           type: "h7",
@@ -49,12 +55,12 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+        
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
-        <h7 style={{font:"work sans"}}>
+        
         {renderText({
           label: data.business,
           type: "",
@@ -62,13 +68,13 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+       
         </Grid>
         
       </Grid>
 
       <Grid item xs={12} >
-      <h7 style={{font:"work sans"}}>
+      
         {renderText({
           label: "AUTHORIZED SIGNER:",
           type: "",
@@ -76,12 +82,12 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+       
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
-        <h7 style={{font:"work sans"}}>
+        
         {renderText({
           label: `${data.firstName} ${data.lastName}`,
           type: "",
@@ -89,13 +95,13 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+        
         </Grid>
         
       </Grid>
 
       <Grid item xs={12} >
-      <h7 style={{font:"work sans"}}>
+      
         {renderText({
           label: "EMAIL ADDRESS:",
           type: "",
@@ -103,12 +109,12 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+        
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
-        <h7 style={{font:"work sans"}}>
+        
         {renderText({
           label: data.email,
           type: "",
@@ -116,12 +122,12 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
          
         })}
-        </h7>
+        
         </Grid>
         
       </Grid>
       <Grid item xs={12} >
-      <h7 style={{font:"work sans"}}>
+      
         {renderText({
           label: "YOUR PHONE NUMBER:",
           type: "",
@@ -129,12 +135,12 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+        
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
-        <h7 style={{font:"work sans"}}>
+       
         {renderText({
           label: data.phone2,
           type: "",
@@ -142,13 +148,13 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+        
         </Grid>
         
       </Grid>
 
       <Grid item xs={12} >
-      <h7 style={{font:"work sans"}}>
+      
         {renderText({
           label: "ACCOUNT NAME:",
           type: "",
@@ -156,12 +162,12 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+        
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
-        <h7 style={{font:"work sans"}}>
+        
         {renderText({
           label: data.accountName.toLowerCase().replace(/\s+/g, ''),
           type: "",
@@ -169,13 +175,13 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
          
         })}
-        </h7>
+        
         </Grid>
         
       </Grid>
 
       <Grid item xs={12} >
-      <h7 style={{font:"work sans"}}>
+      
         {renderText({
           label: "SERVICE ADDRESS:",
           type: "",
@@ -183,12 +189,12 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+       
         </Grid>
 
         <Grid container style={{ marginBottom: "15px"}}>
         <Grid item xs={12}>
-        <h7 style={{font:"work sans"}}>
+        
         {renderText({
           label: `${data.streetno} ${data.streetname}. ${data.address2}`,
           type: "",
@@ -196,10 +202,10 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+        
         </Grid>
         <Grid item xs={12}>
-        <h7 style={{font:"work sans"}}>
+        
         {renderText({
           label: `${data.city} ${data.province}, ${data.zip}-${data.zip2}`,
           type: "",
@@ -207,7 +213,7 @@ const FinalStep = ({ data, handleNext }) => {
           align: "left",
           
         })}
-        </h7>
+        
         </Grid>
         
       </Grid>

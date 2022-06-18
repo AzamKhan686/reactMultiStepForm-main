@@ -5,9 +5,6 @@ import {
   Grid,
   Paper,
   withStyles,
-  Stepper,
-  Step,
-  StepLabel,
 } from "@material-ui/core";
 import Step1 from "./Steps/step1";
 import Step2 from "./Steps/step2";
@@ -91,7 +88,7 @@ class FormComponent extends Component {
     const handleOnChange = ({ target }) => {
       const { data, errors, validity } = this.state;
 
-      if (target.name == "firstName") {
+      if (target.name === "firstName") {
         if (target.value.length < 2) {
           errors.firstName = `First name should have at least 2 letters`;
           validity.firstName = false;
@@ -100,7 +97,7 @@ class FormComponent extends Component {
           validity.firstName = true;
         }
       }
-      if (target.name == "lastName") {
+      if (target.name === "lastName") {
         if (target.value.length < 2) {
           errors.lastName = `Last name should have at least 2 letters`;
           validity.lastName = false;
@@ -109,7 +106,7 @@ class FormComponent extends Component {
           validity.lastName = true;
         }
       }
-      if (target.name == "email") {
+      if (target.name === "email") {
         let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
         if (target.value.length <= 9 && !regex.test(target.value)) {
           errors.email = `Email is not valid!`;
@@ -120,10 +117,10 @@ class FormComponent extends Component {
         }
       }
 
-      if (target.name == "phone") {
+      if (target.name === "phone") {
         var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
         if (!phoneNumberPattern.test(target.value)) {
-          errors.phone = `Invalid phone number please use (xxx) xxx - xxxx format`;
+          errors.phone = `Invalid phone number please use xxxxxxxxxx format`;
           validity.phone = false;
         } else {
           errors[target.name] = "";
@@ -133,7 +130,7 @@ class FormComponent extends Component {
           return false;
         }
       }
-      if (target.name == "chkb") {
+      if (target.name === "chkb") {
         console.log(target.checked);
         if (target.checked == true) {
           validity.chkb = true;
@@ -143,15 +140,13 @@ class FormComponent extends Component {
       }
 
       // if(target.name =="otp"){
-      //   // if(isNaN(target.value)){
-      //   //   return false
-      //   // }
+        
       //   if (target.nextSibling) {
       //     target.nextSibling.focus();
       // }
       // }
 
-      if (target.name == "business") {
+      if (target.name === "business") {
         if (target.value.length < 2) {
           errors.business = `Business name is invalid`;
           validity.business = false;
@@ -160,10 +155,10 @@ class FormComponent extends Component {
           validity.business = true;
         }
       }
-      if (target.name == "phone2") {
+      if (target.name === "phone2") {
         var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
         if (!phoneNumberPattern.test(target.value)) {
-          errors.phone2 = `Invalid phone number please use (xxx) xxx - xxxx format`;
+          errors.phone2 = `Invalid phone number please use xxxxxxxxxx format`;
           validity.phone2 = false;
         } else {
           errors[target.name] = "";
@@ -173,7 +168,7 @@ class FormComponent extends Component {
           return false;
         }
       }
-      if (target.name == "streetno") {
+      if (target.name === "streetno") {
         if (isNaN(target.value)) {
           validity.streetno = true;
           return false;
@@ -183,8 +178,8 @@ class FormComponent extends Component {
         }
       }
 
-      if (target.name == "streetname") {
-        if (target.value == "") {
+      if (target.name === "streetname") {
+        if (target.value === "") {
           errors.streetname = `Street name is required`;
           validity.streetname = false;
         } else {
@@ -193,8 +188,8 @@ class FormComponent extends Component {
         }
       }
 
-      if (target.name == "city") {
-        if (target.value == "") {
+      if (target.name === "city") {
+        if (target.value === "") {
           errors.city = `City is required`;
           validity.city = false;
         } else {
@@ -203,7 +198,7 @@ class FormComponent extends Component {
         }
       }
 
-      if (target.name == "province") {
+      if (target.name === "province") {
         if (target.value == "") {
           errors.province = `Please select province`;
           validity.province = false;
@@ -213,7 +208,7 @@ class FormComponent extends Component {
         }
       }
 
-      if (target.name == "zip") {
+      if (target.name === "zip") {
         if (isNaN(target.value)) {
           errors.zip = `Not a valid postal code`;
           validity.zip = false;
@@ -224,13 +219,13 @@ class FormComponent extends Component {
         }
       }
 
-      if (target.name == "accountName") {
+      if (target.name === "accountName") {
         if (target.value==="") {
           errors.accountName = "Account name can not be empty";
           validity.accountName = false;
         } 
         
-         else if (/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(target.value) == true) {
+         else if (/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(target.value) === true) {
           errors.accountName = "Account name should have no special characters";
           validity.accountName = false;
         } else {

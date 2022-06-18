@@ -17,19 +17,18 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev,data }) => {
           type: "h6",
           color: "textPrimary",
           align: "center",
-          fontFamily: "work sans",
         })}
       </Box>
       <Grid container spacing={1}> 
-      <Grid item xs={3}> 
+      <Grid item xs={2}> 
       
       </Grid>
-      <Grid item xs={6}> 
-       <Box >
-       <p style={{ font:"work sans" }}>You will immediately receive an automated phone call to <span style={{color:"#FF6E51"}}><b>{data.phone}</b></span> with a PIN number to verify ownership.{<br></br>}{<br></br>} Have a pen and paper handy!</p>
+      <Grid item xs={8}> 
+       <Box ml={4} >
+       <p style={{ font:"work sans"}}>You will immediately receive an automated phone call to <span style={{color:"#FF6E51"}}><b>{data.phone}</b></span> with a PIN number to verify ownership.{<br></br>}{<br></br>} Have a pen and paper handy!</p>
       </Box>
       </Grid>
-      <Grid item xs={3}> 
+      <Grid item xs={2}> 
       
       </Grid>
       </Grid>
@@ -39,7 +38,7 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev,data }) => {
       
       </Grid>
       <Grid item xs={6}>
-        <Box ml={2}>{renderButton({ label: "Call Me Now", onClick: handleNext })}</Box>
+        <Box>{renderButton({ label: "Call Me", onClick: handleNext })}</Box>
         
         </Grid>
         <Grid item xs={3}> 

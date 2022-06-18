@@ -26,7 +26,6 @@ const Step4 = ({
           type: "h6",
           color: "textPrimary",
           align: "center",
-          fontFamily: "work sans",
         })}
       </Box>
 
@@ -36,19 +35,19 @@ const Step4 = ({
         
         <Grid item  xs={8}  justify="center" style={{ display: "flex", flexDirection: "row"}} >
         
-        {<CheckCircleIcon style={{ fontSize: 25, color:"#20e631", marginRight:"10px", marginTop:"25px" }}/>}<h2 style={{color: "#20e631"}}>{data.phone}</h2>
+        {<CheckCircleIcon style={{ fontSize: 25, color:"#20e631", marginRight:"10px", marginTop:"25px" }}/>}<h2 style={{color: "#20e631", font:"work sans"}}>{data.phone}</h2>
         </Grid>
         <Grid item xs={2}></Grid>
       </Grid>
 
       <Grid container component={Box} justify="center" p={2}>
-        <Grid item xs={3}></Grid>
+        {/* <Grid item xs={3}></Grid> */}
         <Grid item xs={6}>
           <Box ml={2} mt={2}>
             {renderButton({ label: "Next", onClick: handleNext })}
           </Box>
         </Grid>
-        <Grid item xs={3}></Grid>
+        {/* <Grid item xs={3}></Grid> */}
       </Grid>
      
     </Paper>

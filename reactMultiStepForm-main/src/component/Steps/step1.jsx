@@ -18,15 +18,14 @@ const Step1 = ({ state, handleChange, handleNext }) => {
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
-        <h4 style={{font:"work sans", fontWeight:"500"}}>
+        {/* <h4 style={{font:"work sans", fontWeight:"500"}}> */}
         {renderText({
           label: "COMCAST BUSINESS PHONE NUMBER",
           type: "",
           color: "textPrimary",
           align: "left",
-          fontFamily: "work sans",
         })}
-        </h4>
+        {/* </h4> */}
       </Box>
 
       <Grid container spacing={2} style={{ marginBottom: "25px" }}>
@@ -54,6 +53,7 @@ const Step1 = ({ state, handleChange, handleNext }) => {
         <Grid item xs={12} sm={6}>
           {renderInputField({
             state,
+            type: "text",
             name: "firstName",
             label: "First Name",
             onChange: handleChange,

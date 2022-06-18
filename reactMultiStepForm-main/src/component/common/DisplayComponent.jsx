@@ -2,16 +2,16 @@ import { Button, MenuItem, TextField, Typography } from "@material-ui/core";
 
 
 export const renderText = ({fontFamily, type, label, color, ...rest }) => (
-  <Typography variant={type} fontFamily={fontFamily} color={color} {...rest}>
+  <Typography variant={type} fontFamily={fontFamily ? fontFamily : "work sans"} color={color} {...rest}>
     {label}
   </Typography>
 );
 
-export const renderInputField = ({ name, label, type, state, onChange }) => {
+export const renderInputField = ({ required, name, label, type, state, onChange }) => {
   const { data, errors } = state;
   return (
     <TextField
-    required
+    required={required ? false : true}
       label={label}
       type={type ? type : "text"}
       variant='outlined'
@@ -31,6 +31,7 @@ export const renderSelect = ({ name, label, options, state, onChange }) => {
   const { data, errors } = state;
   return (
     <TextField
+    required
       select
       label={label}
       variant='outlined'
