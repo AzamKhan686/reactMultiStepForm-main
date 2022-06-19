@@ -25,7 +25,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
       </Box>
 
       <Grid item xs={12} container style={{ marginBottom: "10px"}}>
-        <p style={{font:"work sans" }}>Please complete additional information about your organization:</p>
+        <p style={styles.Textfont}>Please complete additional information about your organization:</p>
         
       </Grid>
 
@@ -128,7 +128,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
           {renderInputField({
             state,
             name: "streetno",
-            label: "Street No",
+            label: "Street no",
             type: "text",
             onChange: handleChange,
           })}
@@ -243,7 +243,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
             onChange: handleChange,
           })}
         </Grid>
-        {/* <Grid item xs={4}></Grid> */}
+        {/* <Grid item xs={5}></Grid> */}
       </Grid>
 
       <Grid container justify="center" p={2} style={{ marginTop:"50px", marginBottom:"25px"}}>

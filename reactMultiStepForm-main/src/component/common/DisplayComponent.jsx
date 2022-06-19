@@ -1,9 +1,9 @@
 import { Button, MenuItem, TextField, Typography } from "@material-ui/core";
+import { styles } from "../common/styles";
 
-
-export const renderText = ({fontFamily, type, label, color, ...rest }) => (
-  <Typography variant={type} fontFamily={fontFamily ? fontFamily : "work sans"} color={color} {...rest}>
-    {label}
+export const renderText = ({type, label, color, ...rest }) => (
+  <Typography variant={type} color={color} {...rest}>
+    <span style={styles.Textfont}>{label}</span>
   </Typography>
 );
 
@@ -11,8 +11,8 @@ export const renderInputField = ({ required, name, label, type, state, onChange 
   const { data, errors } = state;
   return (
     <TextField
-    required={required ? false : true}
-      label={label}
+      required={required ? false : true}
+      label= {<span style={styles.Textfont}>{label}</span>}
       type={type ? type : "text"}
       variant='outlined'
       color='primary'
@@ -21,7 +21,7 @@ export const renderInputField = ({ required, name, label, type, state, onChange 
       name={name}
       value={data[name]}
       error={errors[name] ? true : false}
-      helperText={errors[name] ? errors[name] : ""}
+      helperText={errors[name] ? <span style={styles.Textfont}>{errors[name]}</span> : ""}
       onChange={onChange}
       
     />
@@ -33,7 +33,7 @@ export const renderSelect = ({ name, label, options, state, onChange }) => {
     <TextField
     required
       select
-      label={label}
+      label={<span style={styles.Textfont}>{label}</span>}
       variant='outlined'
       color='primary'
       size='small'
@@ -52,7 +52,7 @@ export const renderSelect = ({ name, label, options, state, onChange }) => {
   );
 };
 
-export const renderButton = ({ label, variant, color, fullWidth, onClick }) => (
+export const renderButton = ({label, variant, color, fullWidth, onClick }) => (
   <Button
     style={{ width: "100%", backgroundColor:"#FF6E51", color:"#ffffff"}}
     variant={variant ? variant : "outlined"}
@@ -60,6 +60,6 @@ export const renderButton = ({ label, variant, color, fullWidth, onClick }) => (
     // fullWidth={fullWidth ? fullWidth : false}
     onClick={onClick}
     >
-    {label}
+    <span style={styles.Textfont}>{label}</span>
   </Button>
 );

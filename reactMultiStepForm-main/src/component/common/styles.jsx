@@ -32,7 +32,11 @@ export const styles = {
     justifyContent: "space-between",
     marginBottom: "15px",
     marginTop: "25px",
-    textIndent: "8px",
+    textIndent: "43%",
     marginLeft: "12px",
   },
+
+  Textfont:{
+    fontFamily:'work sans'
+  }
 };

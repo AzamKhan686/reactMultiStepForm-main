@@ -8,14 +8,13 @@ const Finish = () => {
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={3}>
-        {/* {renderText({
+        {renderText({
           label: "Success! Your Account is Created.",
           type: "h5",
           color: "textPrimary",
           align: "center",
-          fontFamily: "work sans",
-        })} */}
-         <h2 style={{textAlign:"center", font:"work sans", fontWeight:"400"}}>Success! Your Account is Created.</h2>
+        })}
+         {/* <h2 style={{textAlign:"center", font:"work sans", fontWeight:"400"}}>Success! Your Account is Created.</h2> */}
       </Box>
 
       <Grid item xs={12} container justify="center" style={{ marginBottom: "10px", textAlign:'center'}}>
@@ -45,7 +44,7 @@ const Finish = () => {
       </Grid>
 
         <Grid container component={Box} justify="center" mb={2} p={2}>
-        <a href="#" style={{font:"work sans"}}>Resend Email</a>
+        <a href="#" style={styles.Textfont}>Resend Email</a>
       </Grid>
 
     </Paper>

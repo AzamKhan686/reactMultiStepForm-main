@@ -19,13 +19,14 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev,data }) => {
           align: "center",
         })}
       </Box>
-      <Grid container spacing={1}> 
+      <Grid container> 
       <Grid item xs={2}> 
       
       </Grid>
       <Grid item xs={8}> 
-       <Box ml={4} >
-       <p style={{ font:"work sans"}}>You will immediately receive an automated phone call to <span style={{color:"#FF6E51"}}><b>{data.phone}</b></span> with a PIN number to verify ownership.{<br></br>}{<br></br>} Have a pen and paper handy!</p>
+       <Box ml={5} >
+       <p style={styles.Textfont}>You will immediately receive an automated phone call to <span style={{color:"#FF6E51"}}><b>{data.phone}</b></span> with a PIN number to verify ownership.{<br></br>}{<br></br>} Have a pen and paper handy!</p>
+       
       </Box>
       </Grid>
       <Grid item xs={2}> 

@@ -70,7 +70,7 @@ const Step3 = ({handleNext, handleSubmit,}) => {
         <Grid item xs={3}></Grid>
       </Grid>
       <Grid container component={Box} justify="center" mb={2} p={2}>
-        <a style={{ font:"work sans" }} href="#">Call Me Again</a>
+        <a style={styles.Textfont} href="#">Call Me Again</a>
       </Grid>
     </Paper>
   );

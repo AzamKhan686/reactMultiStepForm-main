@@ -75,12 +75,14 @@ const Step1 = ({ state, handleChange, handleNext }) => {
             
             
             control={<Checkbox onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "20px" }} />}
-            label={
-              <p style={{font:"work sans" }}>
-                I represent the organization (owner of this phone number) and am
-                authorized to complete this process.The voice line will not be
-              </p>
-            }
+            label={renderText({
+              label: "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be",
+              type: "",
+              color: "textPrimary",
+              align: "left",
+            })}
+              
+            
           />
         </FormGroup>
       </Grid>

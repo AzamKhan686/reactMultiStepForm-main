@@ -26,7 +26,7 @@ const Step6 = ({ state, handleChange, handleNext }) => {
       
       </Grid>
       <Grid item xs={8}>
-        <Box ml={2}><p style={{ font:"work sans" }}>This is a suggested name which will be your "Account  Name" used by you and your team members to access your account. {<br></br>}{<br></br>}To change it, just edit and submit</p></Box>
+        <Box ml={2}><p style={styles.Textfont}>This is a suggested name which will be your "Account  Name" used by you and your team members to access your account. {<br></br>}{<br></br>}To change it, just edit and submit</p></Box>
         
         </Grid>
         <Grid item xs={2}> 
@@ -43,7 +43,7 @@ const Step6 = ({ state, handleChange, handleNext }) => {
         <Box ml={2}> {renderInputField({
             state,
             name: "accountName",
-            label: "",
+            label: "Account Name",
             type: "text",
             onChange: handleChange,
           })}</Box>
