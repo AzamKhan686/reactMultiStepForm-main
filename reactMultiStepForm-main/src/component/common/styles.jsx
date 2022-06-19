@@ -36,6 +36,18 @@ export const styles = {
     marginLeft: "12px",
   },
 
+  otpSmallScreen:{
+    width: "20%",
+    height:"38%",
+    fontSize: 20,
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: "15px",
+    marginTop: "25px",
+    textIndent: "38%",
+    marginLeft: "12px",
+  },
+
   Textfont:{
     fontFamily:'work sans'
   }

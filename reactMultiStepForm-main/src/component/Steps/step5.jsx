@@ -11,6 +11,7 @@ import {
   renderText,
   renderSelect
 } from "../common/DisplayComponent";
+import { isMobile } from "react-device-detect";
 
 const Step5 = ({ state, handleChange, handleNext , data}) => {
   return (
@@ -122,13 +123,13 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
         })}
         </Grid>
       
-
-      <Grid container spacing={2} style={{ marginBottom: "15px"}}>
+        {isMobile ? (<Grid container spacing={2} style={{ marginBottom: "15px"}}>
+        
         <Grid item xs={4}>
           {renderInputField({
             state,
             name: "streetno",
-            label: "Street no",
+            label: "Street No",
             type: "text",
             onChange: handleChange,
           })}
@@ -141,7 +142,30 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
             onChange: handleChange,
           })}
         </Grid>
+      </Grid>):
+      (<Grid container spacing={2} style={{ marginBottom: "15px"}}>
+        
+      <Grid item xs={3}>
+        {renderInputField({
+          state,
+          name: "streetno",
+          label: "Street Number",
+          type: "text",
+          onChange: handleChange,
+        })}
       </Grid>
+      <Grid item xs={9}>
+        {renderInputField({
+          state,
+          name: "streetname",
+          label: "Street Name",
+          onChange: handleChange,
+        })}
+      </Grid>
+    </Grid>
+    )
+    }
+      
 
       <Grid item xs={12} style={{ marginTop: "15px"}}>
           {renderInputField({
@@ -210,7 +234,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
                 { key: "South Carolina", value: "South Carolina" },
                 { key: "South Dakota", value: "South Dakota" },
                 { key: "Tennessee", value: "Tennessee" },
-                { key: "Taxes", value: "Taxes" },
+                { key: "Texas", value: "Texas" },
                 { key: "Utah", value: "Utah" },
                 { key: "Vermont", value: "Vermont" },
                 { key: "Virginia", value: "Virginia" },
@@ -224,8 +248,8 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
         </Grid>
       </Grid>
 
-      <Grid container spacing={2} style={{ marginTop: "15px"}}>
-        <Grid item xs={3}>
+      {isMobile ? (<Grid container spacing={2} style={{ marginTop: "15px"}}>
+        <Grid item xs={4}>
           {renderInputField({
             state,
             name: "zip",
@@ -244,7 +268,29 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
           })}
         </Grid>
         {/* <Grid item xs={5}></Grid> */}
-      </Grid>
+      </Grid>):
+       <Grid container spacing={2} style={{ marginTop: "15px"}}>
+       <Grid item xs={3}>
+         {renderInputField({
+           state,
+           name: "zip",
+           label: "ZIP/Postal code",
+           type: "text",
+           onChange: handleChange,
+         })}
+       </Grid>
+       <Grid item xs={3}>
+         {renderInputField({
+           required:true,
+           state,
+           name: "zip2",
+           label: "ZIP Plus 4 (optional)",
+           onChange: handleChange,
+         })}
+       </Grid>
+       {/* <Grid item xs={5}></Grid> */}
+     </Grid>}
+     
 
       <Grid container justify="center" p={2} style={{ marginTop:"50px", marginBottom:"25px"}}>
         {renderButton({ label: "Next", onClick: handleNext })} 

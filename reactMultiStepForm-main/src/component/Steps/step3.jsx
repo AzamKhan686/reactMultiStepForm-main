@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, Grid, Paper, TextField } from "@material-ui/core";
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 import { styles } from "../common/styles";
 import {
   renderButton,
@@ -33,8 +34,9 @@ const Step3 = ({handleNext, handleSubmit,}) => {
         })}
       </Box>
 
-      
-
+{ 
+isBrowser ? (     
+<Grid>
       <Grid container mt={2}>
         <Grid item xs={2}></Grid>
         
@@ -72,6 +74,53 @@ const Step3 = ({handleNext, handleSubmit,}) => {
       <Grid container component={Box} justify="center" mb={2} p={2}>
         <a style={styles.Textfont} href="#">Call Me Again</a>
       </Grid>
+      </Grid>):
+
+// MOBILE VIEW
+
+      (     
+        <Grid>
+          
+              <Grid container mt={2}>
+                <Grid item xs={2}></Grid>
+                
+                <Grid item  xs={8} justify="center" style={{ display: "flex", flexDirection: "row"}} >
+                 
+                {otp.map((data, index) => {
+                                return (
+                                    <input
+                                        style={styles.otpSmallScreen}
+                                        type="text"
+                                        name="otp"
+                                        maxLength="1"
+                                        key={index}
+                                        value={data}
+                                        onChange={e => handleChange(e.target, index)}
+                                        onFocus={e => e.target.select()}
+                                    />
+                                );
+                            })}
+        
+                  
+                </Grid>
+                <Grid item xs={2}></Grid>
+              </Grid>
+        
+              <Grid container component={Box} justify="center" p={2}>
+                <Grid item xs={2}></Grid>
+                <Grid item xs={8}>
+                  <Box ml={1} mt={2}>
+                    {renderButton({ label: "Submit", onClick: handleNext })}
+                  </Box>
+                </Grid>
+                <Grid item xs={2}></Grid>
+              </Grid>
+              <Grid container component={Box} justify="center" mb={2} p={2}>
+                <a style={styles.Textfont} href="#">Call Me Again</a>
+              </Grid>
+              </Grid>
+              )
+}
     </Paper>
   );
 };

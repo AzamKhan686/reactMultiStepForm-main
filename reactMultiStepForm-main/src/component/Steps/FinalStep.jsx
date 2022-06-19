@@ -18,7 +18,7 @@ const FinalStep = ({ data, handleNext }) => {
       </Box>
 
       <Grid item xs={12} container style={{ marginBottom: "10px"}}>
-        <p style={{font:"work sans" }}>Please review your information before creating your Alive5 account.</p>
+        <p style={styles.Textfont}>Please review your information before creating your Alive5 account.</p>
         
       </Grid>
 
