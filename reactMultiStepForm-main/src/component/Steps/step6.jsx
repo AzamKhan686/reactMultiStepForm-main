@@ -6,7 +6,7 @@ import {
   renderInputField,
   renderText,
 } from "../common/DisplayComponent";
-import { isBrowser, isMobile } from "react-device-detect";
+import { isBrowser } from "react-device-detect";
 
 const Step6 = ({ state, handleChange, handleNext }) => {
   return (

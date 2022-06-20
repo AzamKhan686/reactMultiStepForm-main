@@ -131,12 +131,14 @@ class FormComponent extends Component {
         }
       }
       if (target.name === "chkb") {
-        console.log(target.checked);
-        if (target.checked == true) {
-          validity.chkb = true;
-        } else {
+        if(target.checked ===false){
+          errors.chkb = "Please fill the checkbox to proceed further";
           validity.chkb = false;
+        }else{
+          errors.chkb = "";
+          validity.chkb = true;
         }
+        
       }
 
       // if(target.name =="otp"){
@@ -255,13 +257,13 @@ class FormComponent extends Component {
         } else {
           const keys = Object.keys(data);
           keys.forEach((key, index) => {
-            if(index<=3){
+            if(index<=4){
             if (data[key] === "") {
               errors[key] = `This field is required`;
               this.setState(errors);
             }
           }
-             console.log(`${key}: ${index}`);
+            //  console.log(`${key}: ${index}`);
           });
          
         }
@@ -340,6 +342,7 @@ class FormComponent extends Component {
               state={this.state}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
+              errors={this.state.errors}
             />
           );
         case 1:

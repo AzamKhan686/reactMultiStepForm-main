@@ -6,6 +6,8 @@ import {
   Checkbox,
   FormControlLabel,
   FormGroup,
+  FormControl,
+  FormHelperText
 } from "@material-ui/core";
 import { styles } from "../common/styles";
 import {
@@ -14,7 +16,7 @@ import {
   renderText,
 } from "../common/DisplayComponent";
 
-const Step1 = ({ state, handleChange, handleNext }) => {
+const Step1 = ({ state, handleChange, handleNext, errors }) => {
   return (
     <Paper style={styles.steps}>
       <Box mt={2} mb={2}>
@@ -70,11 +72,10 @@ const Step1 = ({ state, handleChange, handleNext }) => {
       </Grid>
 
       <Grid style={{ marginBottom: "25px" }}>
+        <FormControl required error= {errors}>
         <FormGroup>
           <FormControlLabel
-            
-            
-            control={<Checkbox onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "20px" }} />}
+            control={<Checkbox  onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "20px" }} />}
             label={renderText({
               label: "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be",
               type: "",
@@ -85,6 +86,8 @@ const Step1 = ({ state, handleChange, handleNext }) => {
             
           />
         </FormGroup>
+        <FormHelperText><span style={styles.Textfont}>{errors.chkb}</span></FormHelperText>
+        </FormControl>
       </Grid>
 
       <Grid container justify="center" mt={2} p={2} style={{ marginBottom: "25px"}}>
