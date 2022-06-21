@@ -5,7 +5,7 @@ import { renderText,renderButton } from "../common/DisplayComponent";
 
 const FinalStep = ({ data, handleNext }) => {
   return (
-    <Paper style={styles.steps}>
+    <Grid style={styles.steps}>
       <Box mt={2} mb={2}>
       {renderText({
           label: "Review Your Information & Create Account",
@@ -222,7 +222,7 @@ const FinalStep = ({ data, handleNext }) => {
       <Grid container justify="center" p={2} style={{ marginTop:"50px", marginBottom:"25px"}}>
         {renderButton({ label: "Create Account", onClick: handleNext })} 
       </Grid>
-    </Paper>
+    </Grid>
   );
 };
 

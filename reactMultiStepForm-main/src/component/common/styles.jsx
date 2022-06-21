@@ -21,9 +21,9 @@ export const styles = {
   },
 
   steps: {
-    padding: "20px",
+    padding: "15px",
   },
-
+// OTP STYLING
   otpfield:{
     width: "10%",
     height:"50%",
@@ -47,8 +47,9 @@ export const styles = {
     textIndent: "38%",
     marginLeft: "12px",
   },
-
+// OTP STYLING
   Textfont:{
-    fontFamily:'work sans'
+    fontFamily:'work sans',
+    textRendering:"optimizeLegibility"
   }
 };

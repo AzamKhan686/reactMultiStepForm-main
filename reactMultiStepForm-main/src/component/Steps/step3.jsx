@@ -24,7 +24,7 @@ const Step3 = ({handleNext, handleSubmit,}) => {
 };
 
   return (
-    <Paper style={styles.steps}>
+    <Grid style={styles.steps}>
       <Box mt={2} mb={2}>
         {renderText({
           label: "Enter 4 digit verification PIN",
@@ -121,7 +121,7 @@ isBrowser ? (
               </Grid>
               )
 }
-    </Paper>
+    </Grid>
   );
 };
 

@@ -1,61 +1,118 @@
-import React from 'react'
-import { Grid, Paper, Avatar, Typography, TextField, Button } from '@material-ui/core'
-import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-const LandingPage = () => {
-    const paperStyle = { padding: '30px 20px', width: 400, margin: "30px" }
-    const headerStyle = { margin: 0 }
-    
-    const marginTop = { marginTop: 5 }
-    return (
-        <Grid>
-            <Paper elevation={1} style={paperStyle}>
-                <Grid align='left'>
-                    <h2 style={headerStyle}>Sign Up</h2>
-                   
-                </Grid>
-                <Grid align='left' style={{marginTop:"25px"}}>
-                    
-                    <Typography variant='h7' gutterBottom>Please fill this form to create an account !</Typography>
-                </Grid>
-                <form>
-                    <Grid style={{marginBottom:"25px"}}>
-                    <TextField 
-                    fullWidth 
-                    label='Phone Number' 
-                    placeholder="Enter your email" 
-                    variant='outlined' 
-                    color='primary' 
-                    size='small'
-                    name='phone'
-                  
-                    />
-                    </Grid>
-                    <TextField fullWidth label='Email' placeholder="Enter your email" />
-                    <FormControl component="fieldset" style={marginTop}>
-                        <FormLabel component="legend">Gender</FormLabel>
-                        <RadioGroup aria-label="gender" name="gender" style={{ display: 'initial' }}>
-                            <FormControlLabel value="female" control={<Radio />} label="Female" />
-                            <FormControlLabel value="male" control={<Radio />} label="Male" />
-                        </RadioGroup>
-                    </FormControl>
-                    <TextField fullWidth label='Phone Number' placeholder="Enter your phone number" />
-                    <TextField fullWidth label='Password' placeholder="Enter your password"/>
-                    <TextField fullWidth label='Confirm Password' placeholder="Confirm your password"/>
-                    <FormControlLabel
-                        control={<Checkbox name="checkedA" />}
-                        label="I accept the terms and conditions."
-                    />
-                    <Button type='submit' variant='contained' color='primary'>Sign up</Button>
-                </form>
-            </Paper>
+import React from "react";
+import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
+import FormLabel from "@material-ui/core/FormLabel";
+
+import { styles } from "../common/styles";
+import {
+  renderButton,
+  renderInputField,
+  renderText,
+} from "../common/DisplayComponent";
+import {
+  Box,
+  Grid,
+  Paper,
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
+  FormControl,
+  FormHelperText,
+} from "@material-ui/core";
+const LandingPage = ({ state, handleChange, handleNext, errors }) => {
+  const paperStyle = { padding: "30px 20px", width: 400, margin: "30px" };
+  const headerStyle = { margin: 0 };
+
+  const marginTop = { marginTop: 5 };
+  return (
+    <Paper elevation={1} style={paperStyle}>
+      <Box mt={2} mb={2}>
+        {renderText({
+          label: "DESKTOP",
+          type: "",
+          color: "textPrimary",
+          align: "left",
+        })}
+      </Box>
+
+      <Grid container spacing={2} style={{ marginBottom: "25px" }}>
+        <Grid item xs={12} sm={6}>
+          {renderInputField({
+            state,
+            name: "phone",
+            label: "Phone Number",
+            type: "text",
+            onChange: handleChange,
+          })}
         </Grid>
-    )
-}
+        <Grid item xs={12} sm={6}>
+          {renderInputField({
+            state,
+            name: "email",
+            label: "Email Address",
+            type: "email",
+            onChange: handleChange,
+          })}
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={2} style={{ marginBottom: "25px" }}>
+        <Grid item xs={12} sm={6}>
+          {renderInputField({
+            state,
+            type: "text",
+            name: "firstName",
+            label: "First Name",
+            onChange: handleChange,
+          })}
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          {renderInputField({
+            state,
+            name: "lastName",
+            label: "Last Name",
+            onChange: handleChange,
+          })}
+        </Grid>
+      </Grid>
+
+      <Grid style={{ marginBottom: "25px" }}>
+        <FormControl required error={errors}>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  onChange={handleChange}
+                  name="chkb"
+                  color="default"
+                  style={{ marginBottom: "20px" }}
+                />
+              }
+              label={renderText({
+                label:
+                  "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be",
+                type: "",
+                color: "textPrimary",
+                align: "left",
+              })}
+            />
+          </FormGroup>
+          <FormHelperText>
+            <span style={styles.Textfont}>{errors.chkb}</span>
+          </FormHelperText>
+        </FormControl>
+      </Grid>
+
+      <Grid
+        container
+        justify="center"
+        mt={2}
+        p={2}
+        style={{ marginBottom: "25px" }}
+      >
+        {renderButton({ label: "Verify Phone Number", onClick: handleNext })}
+      </Grid>
+    </Paper>
+  );
+};
 
 export default LandingPage;

@@ -19,7 +19,7 @@ const Step4 = ({
 }) => {
 
   return (
-    <Paper style={styles.steps}>
+    <Grid style={styles.steps}>
       <Box mt={2} mb={2}>
         {renderText({
           label: "Success! Your Phone Number was Verified.",
@@ -35,7 +35,7 @@ const Step4 = ({
         
         <Grid item  xs={8}  justify="center" style={{ display: "flex", flexDirection: "row"}} >
         
-        {<CheckCircleIcon style={{ fontSize: 25, color:"#20e631", marginRight:"10px", marginTop:"25px" }}/>}<h2 style={{color: "#20e631", font:"work sans"}}>{data.phone}</h2>
+        {<CheckCircleIcon style={{ fontSize: 25, color:"#20e631", marginRight:"10px", marginTop:"25px" }}/>}<h2 style={{color: "#20e631"}}><span style={styles.Textfont}>{data.phone}</span></h2>
         </Grid>
         <Grid item xs={2}></Grid>
       </Grid>
@@ -50,7 +50,7 @@ const Step4 = ({
         {/* <Grid item xs={3}></Grid> */}
       </Grid>
      
-    </Paper>
+    </Grid>
   );
 };
 

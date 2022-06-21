@@ -15,7 +15,7 @@ import { isMobile } from "react-device-detect";
 
 const Step5 = ({ state, handleChange, handleNext , data}) => {
   return (
-    <Paper style={styles.steps}>
+    <Grid style={styles.steps}>
       <Box mt={2} mb={2}>
         {renderText({
           label: "Create Your Alive5 Account",
@@ -295,7 +295,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
       <Grid container justify="center" p={2} style={{ marginTop:"50px", marginBottom:"25px"}}>
         {renderButton({ label: "Next", onClick: handleNext })} 
       </Grid>
-    </Paper>
+    </Grid>
   );
 };
 

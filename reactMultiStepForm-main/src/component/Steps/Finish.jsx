@@ -6,7 +6,7 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const Finish = () => {
   return (
-    <Paper style={styles.steps}>
+    <Grid style={styles.steps}>
       <Box mt={2} mb={3}>
         {renderText({
           label: "Success! Your Account is Created.",
@@ -47,7 +47,7 @@ const Finish = () => {
         <a href="#" style={styles.Textfont}>Resend Email</a>
       </Grid>
 
-    </Paper>
+    </Grid>
   );
 };
 

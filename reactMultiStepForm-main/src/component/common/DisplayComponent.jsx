@@ -12,6 +12,7 @@ export const renderInputField = ({ required, name, label, type, state, onChange 
   return (
     <TextField
       required={required ? false : true}
+      style={styles.Textfont}
       label= {<span style={styles.Textfont}>{label}</span>}
       type={type ? type : "text"}
       variant='outlined'
@@ -19,7 +20,7 @@ export const renderInputField = ({ required, name, label, type, state, onChange 
       size='small'
       fullWidth={true}
       name={name}
-      value={data[name]}
+      value= {data[name]}
       error={errors[name] ? true : false}
       helperText={errors[name] ? <span style={styles.Textfont}>{errors[name]}</span> : ""}
       onChange={onChange}

@@ -10,7 +10,7 @@ import { isBrowser } from "react-device-detect";
 
 const Step6 = ({ state, handleChange, handleNext }) => {
   return (
-    <Paper style={styles.steps}>
+    <Grid style={styles.steps}>
       <Box mt={2} mb={2}>
         {renderText({
           label: "Confirm Your Account Name",
@@ -115,7 +115,7 @@ const Step6 = ({ state, handleChange, handleNext }) => {
           </Grid>
         </Grid>
       )}
-    </Paper>
+    </Grid>
   );
 };
 

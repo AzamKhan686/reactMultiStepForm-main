@@ -16,7 +16,7 @@ import {
 
 const Step2 = ({ state, handleChange, handleNext, handlePrev, data }) => {
   return (
-    <Paper style={styles.steps}>
+   <Grid style={styles.steps}>
       <Box mt={2} mb={2}>
         {renderText({
           label: "Verify Your Phone Number",
@@ -84,7 +84,7 @@ const Step2 = ({ state, handleChange, handleNext, handlePrev, data }) => {
           </Grid>
         </Grid>
       )}
-    </Paper>
+    </Grid>
   );
 };
 

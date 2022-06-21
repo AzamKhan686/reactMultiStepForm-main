@@ -258,9 +258,10 @@ class FormComponent extends Component {
           const keys = Object.keys(data);
           keys.forEach((key, index) => {
             if(index<=4){
-            if (data[key] === "") {
+            if (!data[key]) {
               errors[key] = `This field is required`;
               this.setState(errors);
+              // console.log(data[key])
             }
           }
             //  console.log(`${key}: ${index}`);
