@@ -108,7 +108,7 @@ class FormComponent extends Component {
       }
       if (target.name === "email") {
         let regex = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
-        if (target.value.length <= 9 && !regex.test(target.value)) {
+        if (!regex.test(target.value)) {
           errors.email = `Email is not valid!`;
           validity.email = false;
         } else {
@@ -257,14 +257,22 @@ class FormComponent extends Component {
         } else {
           const keys = Object.keys(data);
           keys.forEach((key, index) => {
-            if(index<=4){
-            if (!data[key]) {
-              errors[key] = `This field is required`;
-              this.setState(errors);
-              // console.log(data[key])
-            }
-          }
-            //  console.log(`${key}: ${index}`);
+          
+              //console.log(`${key}: ${index}`);
+              if (index <= 3){
+               if (!data[key]){
+               errors[key] = "This field is required"
+               this.setState(errors)
+               }
+              }
+              if (index == 4){
+              if (errors[key] == undefined || errors[key]){
+               errors[key] = "Please fill the checkbox to proceed further"
+               this.setState(errors)
+              }
+              
+              }
+
           });
          
         }

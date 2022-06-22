@@ -116,7 +116,7 @@ const Step1 = ({ state, handleChange, handleNext, errors }) => {
     <FormControl required error= {errors}>
     <FormGroup>
       <FormControlLabel
-        control={<Checkbox  onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "70px" }} />}
+        control={<Checkbox className="chkb" onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "70px" }} />}
         label={renderText({
           label: "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be",
           type: "",
