@@ -16,6 +16,8 @@ import Finish from "./Steps/Finish";
 
 import FinalStep from "./Steps/FinalStep";
 import { styles } from "./common/styles";
+import LandingPage from "./Steps/LandingPage";
+import { isBrowser, isMobile } from "react-device-detect";
 
 class FormComponent extends Component {
   state = {
@@ -141,12 +143,6 @@ class FormComponent extends Component {
         
       }
 
-      // if(target.name =="otp"){
-        
-      //   if (target.nextSibling) {
-      //     target.nextSibling.focus();
-      // }
-      // }
 
       if (target.name === "business") {
         if (target.value.length < 2) {
@@ -347,12 +343,22 @@ class FormComponent extends Component {
       switch (step) {
         case 0:
           return (
-            <Step1
+            isBrowser ? (
+                 <LandingPage
+                state={this.state}
+                handleChange={handleOnChange}
+              handleNext={handleNextStep}
+              errors={this.state.errors} 
+                />
+               ): (
+              <Step1
               state={this.state}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
               errors={this.state.errors}
             />
+               )
+             
           );
         case 1:
           return (
@@ -415,27 +421,59 @@ class FormComponent extends Component {
 
         default:
           return (
-            <Step1
+            isBrowser ? (
+                 <LandingPage
+                state={this.state}
+                handleChange={handleOnChange}
+              handleNext={handleNextStep}
+              errors={this.state.errors} 
+                />
+               ): (
+              <Step1
               state={this.state}
               handleChange={handleOnChange}
               handleNext={handleNextStep}
+              errors={this.state.errors}
             />
+               )
+             
           );
-      }
-    };
-
-    return (
-      <Grid container className={classes.formContainer}>
-        <Grid item xs={12} sm={7}>
-          <form onSubmit={this.handleSubmit} className={classes.form}>
-            <Paper component={Box} mb={1}></Paper>
-            {getStepContent(this.state.stepCount)}
-          </form>
-        </Grid>
-      </Grid>
-    );
   }
+    };
+     if (this.state.stepCount === 0 && isBrowser){
+      
+      return (
+      
+        <Grid container className={classes.first}>
+          <Grid item xs={12} sm={7}>
+            <form onSubmit={this.handleSubmit} className={classes.LPform}>
+              <Paper component={Box} mb={1}></Paper>
+              {getStepContent(this.state.stepCount)}
+            </form>
+          </Grid>
+        </Grid>
+
+      );
+      }
+      else{
+        
+        return (
+          <Grid container className={classes.formContainer}>
+            <Grid item xs={12} sm={7}>
+              <form onSubmit={this.handleSubmit} className={classes.form}>
+                <Paper component={Box} mb={1}></Paper>
+                {getStepContent(this.state.stepCount)}
+              </form>
+            </Grid>
+          </Grid>
+        );
+      }
+  
+  
 }
+}
+  
+
 
 FormComponent.propTypes = {
   classes: PropTypes.object.isRequired,

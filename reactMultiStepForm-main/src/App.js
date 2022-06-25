@@ -5,18 +5,11 @@ import LandingPage from "./component/Steps/LandingPage";
 
 
 function App() {
-  // const renderContent = () => {
-    
-  //   if (isMobile) {
-  //     return <FormComponent/>
-  //   }
-  //   else{
-  //     return <LandingPage/>
-  //   }
-  // }
+  
  return(
-  // <LandingPage/>
-  <FormComponent/>
+
+ <FormComponent />
+ 
  )
   
 }

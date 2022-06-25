@@ -8,7 +8,7 @@ export const renderText = ({type, label, color, ...rest }) => (
 );
 
 export const renderInputField = ({ required, name, label, type, state, onChange }) => {
-  const { data, errors } = state;
+  const { data,errors } = state;
   return (
     <TextField
       required={required ? false : true}
