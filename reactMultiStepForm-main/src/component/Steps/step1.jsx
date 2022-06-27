@@ -100,7 +100,7 @@ const Step1 = ({ state, handleChange, handleNext, errors }) => {
         <FormControlLabel
           control={<Checkbox  onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "20px" }} />}
           label={renderText({
-            label: "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be",
+            label: "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be affected.",
             type: "",
             color: "textPrimary",
             align: "left",
@@ -118,7 +118,7 @@ const Step1 = ({ state, handleChange, handleNext, errors }) => {
       <FormControlLabel
         control={<Checkbox className="chkb" onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "70px" }} />}
         label={renderText({
-          label: "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be",
+          label: "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be affected.",
           type: "",
           color: "textPrimary",
           align: "left",

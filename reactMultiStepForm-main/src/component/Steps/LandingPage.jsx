@@ -105,7 +105,7 @@ const LandingPage = ({ state, handleChange, handleNext, errors }) => {
                   }
                   label={renderText({
                     label:
-                      "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be",
+                      "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be affected.",
                     type: "",
                     color: "textPrimary",
                     align: "left",
