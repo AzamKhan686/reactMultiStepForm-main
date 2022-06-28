@@ -100,7 +100,7 @@ const LandingPage = ({ state, handleChange, handleNext, errors }) => {
                       onChange={handleChange}
                       name="chkb"
                       color="default"
-                      style={{ marginBottom: "45px" }}
+                      style={{ marginBottom: "65px" }}
                     />
                   }
                   label={renderText({
