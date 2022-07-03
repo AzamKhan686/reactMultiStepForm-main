@@ -94,11 +94,11 @@ const Step1 = ({ state, handleChange, handleNext, errors }) => {
         })}
       </Grid>
     </Grid>
-{isBrowser ? ( <Grid style={{ marginBottom: "25px" }}>
+<Grid style={{ marginBottom: "25px" }}>
       <FormControl required error= {errors}>
       <FormGroup>
         <FormControlLabel
-          control={<Checkbox  onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "20px" }} />}
+          control={<Checkbox  onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "90px" }} />}
           label={renderText({
             label: "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be affected.",
             type: "",
@@ -111,25 +111,8 @@ const Step1 = ({ state, handleChange, handleNext, errors }) => {
       </FormGroup>
       <FormHelperText><span style={styles.Textfont}>{errors.chkb}</span></FormHelperText>
       </FormControl>
-    </Grid>):
-    <Grid style={{ marginBottom: "25px" }}>
-    <FormControl required error= {errors}>
-    <FormGroup>
-      <FormControlLabel
-        control={<Checkbox className="chkb" onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "70px" }} />}
-        label={renderText({
-          label: "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be affected.",
-          type: "",
-          color: "textPrimary",
-          align: "left",
-        })}
-          
-        
-      />
-    </FormGroup>
-    <FormHelperText><span style={styles.Textfont}>{errors.chkb}</span></FormHelperText>
-    </FormControl>
-  </Grid>}
+    </Grid>
+    
     
 
     <Grid container justify="center" mt={2} p={2} style={{ marginBottom: "25px"}}>

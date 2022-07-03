@@ -1,10 +1,14 @@
 import { Button, MenuItem, TextField, Typography } from "@material-ui/core";
 import { styles } from "../common/styles";
 
+
+
 export const renderText = ({type, label, color, ...rest }) => (
-  <Typography variant={type} color={color} {...rest}>
-    <span style={styles.Textfont}>{label}</span>
+  
+    <Typography style={styles.Textfont} variant={type} color={color} {...rest}>
+    {label}
   </Typography>
+  
 );
 
 export const renderInputField = ({ required, name, label, type, state, onChange }) => {
@@ -32,6 +36,7 @@ export const renderSelect = ({ name, label, options, state, onChange }) => {
   const { data, errors } = state;
   return (
     <TextField
+    style={styles.Textfont}
     required
       select
       label={<span style={styles.Textfont}>{label}</span>}
@@ -42,7 +47,7 @@ export const renderSelect = ({ name, label, options, state, onChange }) => {
       name={name}
       value={data[name]}
       error={errors[name] ? true : false}
-      helperText={errors[name] ? errors[name] : ""}
+      helperText={errors[name] ? <span style={styles.Textfont}>{errors[name]}</span> : ""}
       onChange={onChange}>
       {options.map((item) => (
         <MenuItem key={item.value} value={item.value}>

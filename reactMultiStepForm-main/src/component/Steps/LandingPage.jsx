@@ -15,8 +15,14 @@ import {
   renderInputField,
   renderText,
 } from "../common/DisplayComponent";
+import { fontSize } from "@mui/system";
+
+
 
 const LandingPage = ({ state, handleChange, handleNext, errors }) => {
+
+  
+
   return (
     <Grid container direction={"row"}>
       <Grid item xs={5}>
@@ -41,9 +47,10 @@ const LandingPage = ({ state, handleChange, handleNext, errors }) => {
             <Box mt={2} mb={2}>
               {renderText({
                 label: "COMCAST BUSINESS PHONE NUMBER:",
-                type: "",
+                type: "text",
                 color: "textPrimary",
                 align: "left",
+                
               })}
             </Box>
           </Grid>
@@ -100,13 +107,13 @@ const LandingPage = ({ state, handleChange, handleNext, errors }) => {
                       onChange={handleChange}
                       name="chkb"
                       color="default"
-                      style={{ marginBottom: "65px" }}
+                      style={{ marginBottom: "87px" }}
                     />
                   }
                   label={renderText({
                     label:
                       "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be affected.",
-                    type: "",
+                    type: "text",
                     color: "textPrimary",
                     align: "left",
                   })}

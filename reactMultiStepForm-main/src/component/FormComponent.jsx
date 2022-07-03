@@ -19,6 +19,7 @@ import { styles } from "./common/styles";
 import LandingPage from "./Steps/LandingPage";
 import { isBrowser, isMobile } from "react-device-detect";
 
+
 class FormComponent extends Component {
   state = {
     data: {
@@ -339,17 +340,21 @@ class FormComponent extends Component {
       }
     };
 
+    
+
     const getStepContent = (step) => {
       switch (step) {
         case 0:
           return (
             isBrowser ? (
+              
                  <LandingPage
                 state={this.state}
                 handleChange={handleOnChange}
               handleNext={handleNextStep}
               errors={this.state.errors} 
                 />
+                
                ): (
               <Step1
               state={this.state}

@@ -71,8 +71,7 @@ export const styles = {
 // OTP STYLING
   Textfont:{
     fontFamily:'work sans',
-    textRendering:"optimizeLegibility",
-    fontDisplay:"swap"
+    textRendering:"auto",
   }
 };
 

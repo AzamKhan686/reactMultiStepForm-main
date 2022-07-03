@@ -1,15 +1,14 @@
 import "./App.css";
 import FormComponent from "./component/FormComponent";
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
-import LandingPage from "./component/Steps/LandingPage";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 
 function App() {
   
  return(
 
- <FormComponent />
- 
+  <FormComponent />
+  
  )
   
 }

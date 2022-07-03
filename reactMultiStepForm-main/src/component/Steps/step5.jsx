@@ -125,7 +125,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
       
         {isMobile ? (<Grid container spacing={2} style={{ marginBottom: "15px"}}>
         
-        <Grid item xs={4}>
+        <Grid item xs={5}>
           {renderInputField({
             state,
             name: "streetno",
@@ -134,7 +134,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
             onChange: handleChange,
           })}
         </Grid>
-        <Grid item xs={8}>
+        <Grid item xs={7}>
           {renderInputField({
             state,
             name: "streetname",
@@ -279,7 +279,7 @@ const Step5 = ({ state, handleChange, handleNext , data}) => {
            onChange: handleChange,
          })}
        </Grid>
-       <Grid item xs={3}>
+       <Grid item xs={4}>
          {renderInputField({
            required:true,
            state,
