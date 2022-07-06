@@ -62,6 +62,7 @@ class FormComponent extends Component {
       email: false,
       phone: false,
       chkb: false,
+      otp: false,
       business: false,
       phone2: false,
       streetno: false,
@@ -88,8 +89,12 @@ class FormComponent extends Component {
       console.log("form submitted");
     };
 
+    
+
     const handleOnChange = ({ target }) => {
       const { data, errors, validity } = this.state;
+
+      
 
       if (target.name === "firstName") {
         if (target.value.length < 2) {
@@ -255,7 +260,7 @@ class FormComponent extends Component {
           const keys = Object.keys(data);
           keys.forEach((key, index) => {
           
-              //console.log(`${key}: ${index}`);
+              // console.log(`${key}: ${index}`);
               if (index <= 3){
                if (!data[key]){
                errors[key] = "This field is required"
@@ -381,6 +386,7 @@ class FormComponent extends Component {
               handleChange={handleOnChange}
               handleNext={handleNextStep}
               handleSubmit={handleSubmit}
+              errors={this.state.errors}
             />
           );
         case 3:

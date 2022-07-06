@@ -107,12 +107,11 @@ const LandingPage = ({ state, handleChange, handleNext, errors }) => {
                       onChange={handleChange}
                       name="chkb"
                       color="default"
-                      style={{ marginBottom: "87px" }}
+                      style={{ marginBottom: "65px" }}
                     />
                   }
                   label={renderText({
-                    label:
-                      "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be affected.",
+                    label: "I represent the organization (owner of this phone number) and am authorized to complete this process. The voice line will not be affected.",
                     type: "text",
                     color: "textPrimary",
                     align: "left",

@@ -15,7 +15,7 @@ import {
   renderInputField,
   renderText,
 } from "../common/DisplayComponent";
-import { isBrowser, isMobile } from "react-device-detect";
+
 
 const Step1 = ({ state, handleChange, handleNext, errors }) => {
   return (
@@ -33,7 +33,8 @@ const Step1 = ({ state, handleChange, handleNext, errors }) => {
       
     </Box>
     </Grid>
-{isBrowser ? (<Grid container spacing={2} style={{ marginBottom: "25px" }}>
+
+     <Grid container spacing={2} style={{ marginBottom: "10px" }}>
       <Grid item xs={12} sm={6}>
         {renderInputField({
           state,
@@ -52,27 +53,7 @@ const Step1 = ({ state, handleChange, handleNext, errors }) => {
           onChange: handleChange,
         })}
       </Grid>
-    </Grid>):
-    ( <Grid container spacing={2} style={{ marginBottom: "10px" }}>
-      <Grid item xs={12} sm={6}>
-        {renderInputField({
-          state,
-          name: "phone",
-          label: "Phone Number",
-          type: "text",
-          onChange: handleChange,
-        })}
-      </Grid>
-      <Grid item xs={12} sm={6}>
-        {renderInputField({
-          state,
-          name: "email",
-          label: "Email Address",
-          type: "email",
-          onChange: handleChange,
-        })}
-      </Grid>
-    </Grid>)}
+    </Grid>
    
 
     <Grid container spacing={2} style={{ marginBottom: "25px" }}>
@@ -100,7 +81,7 @@ const Step1 = ({ state, handleChange, handleNext, errors }) => {
         <FormControlLabel
           control={<Checkbox  onChange={handleChange} name="chkb" color="default" style={{ marginBottom: "90px" }} />}
           label={renderText({
-            label: "I represent the organization (owner of this phone number) and am authorized to complete this process.The voice line will not be affected.",
+            label: "I represent the organization (owner of this phone number) and am authorized to complete this process. The voice line will not be affected.",
             type: "",
             color: "textPrimary",
             align: "left",

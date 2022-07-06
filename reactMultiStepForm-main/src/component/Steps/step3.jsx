@@ -9,11 +9,12 @@ import {
   renderText,
 } from "../common/DisplayComponent";
 
-const Step3 = ({handleNext, handleSubmit,}) => {
+const Step3 = ({handleNext, handleSubmit}) => {
   const [otp, setOtp] = useState(new Array(4).fill(""));
 
   const handleChange = (element, index) => {
     if (isNaN(element.value)) return false;
+
 
     setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
 
@@ -22,6 +23,7 @@ const Step3 = ({handleNext, handleSubmit,}) => {
         element.nextSibling.focus();
     }
 };
+
 
   return (
     <Grid style={styles.steps}>
@@ -60,6 +62,7 @@ isBrowser ? (
           
         </Grid>
         <Grid item xs={2}></Grid>
+        
       </Grid>
 
       <Grid container component={Box} justify="center" p={2}>
